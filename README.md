@@ -45,4 +45,21 @@ The UI output is the source of truth.
 
 Add support for a new permission:
 
-- `reports.export` — Export
+- `reports.export` — Export Reports
+
+Rules:
+- **Admin**: Allowed in all environments
+- **Support**:
+  - Allowed in `staging`
+  - Denied in `prod` (support policy)
+
+The new permission must appear in the UI with the same structure and behavior as existing permissions.
+
+---
+
+## Constraints
+
+- Preserve existing behavior.
+- Treat the code as production code.
+- Assume real users depend on the current behavior.
+- Take the time required.
